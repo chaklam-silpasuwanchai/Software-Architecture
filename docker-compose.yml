@@ -1,0 +1,13 @@
+version: "3"
+services: 
+    project:
+        build: .
+        ports: 
+            - "8080:8080"
+        volumes: 
+            - ./project:/home/project
+            - /home/project/docs/node_modules
+            - ./vscode-server:/root/.vscode-server
+         
+        environment: 
+            - CHOKIDAR_USEPOLLING=true

@@ -1,0 +1,23 @@
+{
+    "name": "project",
+    "version": "0.0.1",
+    "description": "",
+    "main": "index.js",
+    "authors": {
+        "name": "",
+        "email": ""
+    },
+    "repository": "/project",
+    "scripts": {
+        "dev": "vuepress dev src",
+        "build": "vuepress build src"
+    },
+    "license": "MIT",
+    "devDependencies": {
+        "node-sass": "^6.0.1",
+        "node-scss": "^7.0.3",
+        "sass-loader": "^12.3.0",
+        "scss-loader": "^0.0.1",
+        "vuepress": "^1.5.3"
+    }
+}
