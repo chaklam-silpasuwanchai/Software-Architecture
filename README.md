@@ -20,3 +20,8 @@ yarn dev
 ```
 
 Happy coding.
+
+## Stop local server
+```sh
+docker-compose down
+```
