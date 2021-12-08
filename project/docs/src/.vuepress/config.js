@@ -4,7 +4,7 @@ module.exports = {
     /**
      * Ref：https://v1.vuepress.vuejs.org/config/#title
      */
-    title: 'Play VuePress',
+    title: 'AIT SAD 2022',
     /**
      * Ref：https://v1.vuepress.vuejs.org/config/#description
      */
