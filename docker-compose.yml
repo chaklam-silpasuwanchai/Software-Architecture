@@ -6,6 +6,7 @@ services:
             - "8080:8080"
         volumes: 
             - ./project:/home/project
+            - ./docs:/home/deploy
             - /home/project/docs/node_modules
             - ./vscode-server:/root/.vscode-server
          

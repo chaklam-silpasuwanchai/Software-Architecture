@@ -21,6 +21,7 @@ module.exports = {
         ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
     ],
     base: "/Software-Architecture/",
+    dest: "/home/deploy",
     /**
      * Theme configuration, here is the default theme configuration for VuePress.
      *
@@ -30,13 +31,14 @@ module.exports = {
         repo: '',
         editLinks: false,
         docsDir: '',
+
         editLinkText: '',
         lastUpdated: false,
         search: false,
         nav: [{
             text: 'Github',
             link: 'https://github.com/chaklam-silpasuwanchai/Software-Architecture'
-        },{
+        }, {
             text: 'VuePress',
             link: 'https://v1.vuepress.vuejs.org'
         }],
