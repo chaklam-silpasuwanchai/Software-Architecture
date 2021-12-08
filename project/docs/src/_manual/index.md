@@ -60,7 +60,7 @@ if __name__ == "__main__":
 
 ## Image
 
-<img class="dog" :src="$withBase('./dog.jpg')">
+<img class="dog" :src="$withBase('/dog.jpg')">
 
 
 

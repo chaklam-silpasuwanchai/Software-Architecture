@@ -62,3 +62,18 @@ docker run -d -p 80:80  my-web:v1
 - **-p** publish: map **{host port}:{container port}**
 
 - Finally, open browser and go to [http://localhost](http://localhost)
+
+## Step 4: Stop and remove container
+```bash
+docker stop {container_id}
+docker rm {container_id}
+```
+or
+```bash
+docker rm {container_id} -f
+```
+***
+```bash
+docker rm 9a6 -f
+```
+- PS. you can use the short id.
