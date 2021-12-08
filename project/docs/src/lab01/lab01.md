@@ -83,6 +83,34 @@ Reposistory = Video
 
 It is a storage to hold/keep something. In GitHub, a bunch of document/file is expected to be stored in a reposistory.
 
+--------------------------------------------------------------------------------------
+
+Now that you feel the important of Git and GitHub, we will create one.
+
+1. Navigate to GitHub.com
+2. click the green button that says "new"
+
+<img src="./images/github-repo-new.png">
+
+3. You will land on "Create a new reposistory" page.
+4. Just fill in the information as you like.
+
+::: tip README
+[link](https://github.com/chaklam-silpasuwanchai/BCI) Check this Reposistory.
+
+<img src="./images/github-repo-readme.png">
+
+The nice informative section below of the reposistory is automatically display in GitHub when you have "README.md". The extension **.md** stands for markdown language. If you want your reposistory to look professional, you might want to learn the markdown language.
+:::
+
+::: tip .gitignore
+We will learn what and why .gitignore later on. For now, you can just uncheck the box.
+:::
+
+::: tip LICENSE
+Since we are sharing our code to the world (if you choose public option), you might want to set your condition when your code is free to use. You can crafting the license yourself or select the pre-defined one.
+:::
+
 ### Task 1-C. Invite team member to your main reposistory
 
 ## Workshop 2. Have accessible Linux environment
