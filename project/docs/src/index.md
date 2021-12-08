@@ -1,11 +1,12 @@
 # Table of Content
 
-[Lab-1: Set up your machine](/lab1/index.md) <!-- Sends the user to the root README.md -->
+[Lab1: Set up your machine](./lab01/index.md)
 
-[foo](/foo/) <!-- Sends the user to index.html of directory foo -->
+[Lab2: Basic Django](./lab02/index.md)
 
-[foo heading](./#heading) <!-- Anchors user to a heading in the foo README file -->
+[Lab3: Dynamic web with Postgresql](./lab03/index.md)
 
-[bar - three](../bar/three.md) <!-- You can append .md (recommended) -->
+[Lab4: Docker](./lab04/index.md)
 
-[bar - four](../bar/four.html) <!-- Or you can append .html -->
+[Lab5: Docker compose + 3 Databases and Django CRUD](./lab05/index.md)
+
