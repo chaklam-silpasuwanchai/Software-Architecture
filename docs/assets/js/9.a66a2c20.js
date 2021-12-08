@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[9],{396:function(t,s,e){"use strict";e.r(s);var n=e(54),i=Object(n.a)({},(function(){var t=this.$createElement,s=this._self._c||t;return s("ContentSlotsDistributor",{attrs:{"slot-key":this.$parent.slotKey}},[s("h1",[this._v("This is second page")])])}),[],!1,null,null,null);s.default=i.exports}}]);
