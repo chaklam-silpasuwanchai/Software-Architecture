@@ -34,6 +34,9 @@ module.exports = {
         lastUpdated: false,
         search: false,
         nav: [{
+            text: 'Github',
+            link: 'https://github.com/chaklam-silpasuwanchai/Software-Architecture'
+        },{
             text: 'VuePress',
             link: 'https://v1.vuepress.vuejs.org'
         }],
