@@ -25,3 +25,8 @@ Happy coding.
 ```sh
 docker-compose down
 ```
+
+## Clean Docker 
+```sh
+docker system prune
+```
