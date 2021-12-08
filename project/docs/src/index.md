@@ -1,6 +1,6 @@
 # Table of Content
 
-[Lab 1: Set up your machine](./lab01/index.md)
+[Lab 1: Set up your machine](./lab01/lab01.md)
 
 [Lab 2: Basic Django](./lab02/index.md)
 
