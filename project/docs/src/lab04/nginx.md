@@ -65,15 +65,39 @@ docker run -d -p 80:80  my-web:v1
 
 ## Step 4: Stop and remove container
 ```bash
+docker container stop {container_id}
+docker container rm {container_id}
+```
+or
+```bash
 docker stop {container_id}
 docker rm {container_id}
+```
+or
+```bash
+docker container rm {container_id} -f
 ```
 or
 ```bash
 docker rm {container_id} -f
 ```
 ***
+- find the container id
 ```bash
-docker rm 9a6 -f
+docker ps
+```
+or
+```bash
+docker container ls
+```
+
+output
+
+```
+CONTAINER ID   IMAGE                      COMMAND                  CREATED              STATUS              PORTS                    NAMES
+084e8bd8e49d   my-web:v1                  "/docker-entrypoint.…"   About a minute ago   Up About a minute   0.0.0.0:80->80/tcp       clever_lalande
+```
+```bash
+docker rm 084 -f
 ```
 - PS. you can use the short id.

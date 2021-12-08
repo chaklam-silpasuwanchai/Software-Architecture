@@ -77,6 +77,10 @@ For more examples and ideas, visit:
 2. [List containers](https://docs.docker.com/engine/reference/commandline/ps/)
 
 ```bash
+docker container ls -a
+```
+or
+```bash
 docker ps -a
 ```
 output
