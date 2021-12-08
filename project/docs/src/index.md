@@ -1,6 +1,6 @@
 # Table of Content
 
-[Home](/) <!-- Sends the user to the root README.md -->
+[Lab-1: Set up your machine](/lab1/index.md) <!-- Sends the user to the root README.md -->
 
 [foo](/foo/) <!-- Sends the user to index.html of directory foo -->
 
