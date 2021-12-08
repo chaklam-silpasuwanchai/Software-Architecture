@@ -37,7 +37,7 @@ sudo sh docker.sh
 ## Docker Container
 - It looks like you are creating object from your class (Docker Image).
 
-## Task 1: Play HelloWorld
+## Play HelloWorld
 
 1. **docker run** is a command to create Docker container from Docker Image. If you do not have Docker Image, it would be downloaded (pull) automatically from Docker Hub.
 ```bash
@@ -108,3 +108,7 @@ output
 ```
 
 ## Workshop 1: Create your own Docker Image with Dockerfile
+
+### [Hello SAD Class](./hello-sad-class.md)
+### [Nginx](./nginx.md)
+### [Nginx with volumes](./nginx-volume.md)
