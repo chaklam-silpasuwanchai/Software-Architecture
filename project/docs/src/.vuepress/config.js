@@ -32,6 +32,7 @@ module.exports = {
         docsDir: '',
         editLinkText: '',
         lastUpdated: false,
+        search: false,
         nav: [{
             text: 'VuePress',
             link: 'https://v1.vuepress.vuejs.org'
