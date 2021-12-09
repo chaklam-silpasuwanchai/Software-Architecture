@@ -5,7 +5,8 @@ Hello guys, Today we will learn everything that you need to know about to be the
 Firstly, we will be focusing on how to create a container without using Docker-compose which we will talk about it later.
 
 ## Objective
-1. To learn how to create a Docker Image with 
+1. To learn how to create Docker Image.
+2. How to use Docker container.
 
 ## What is Docker?
 - Basically, it looks like VM but it is **NOT** VM.
