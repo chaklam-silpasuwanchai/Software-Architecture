@@ -71,9 +71,8 @@ The insturction to install WSL is [here](https://docs.microsoft.com/en-us/window
 
 ::: danger The Bad
 
-1. No GUIs.
-2. Not mature but quickly growning.
-3. Some processes might run in the background forever.
+1. Not mature but quickly growning.
+2. Some processes might run in the background forever.
 
 :::
 
