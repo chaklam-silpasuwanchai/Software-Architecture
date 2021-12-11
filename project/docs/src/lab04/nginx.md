@@ -1,6 +1,8 @@
 # Workshop: Nginx
 
+::: warning
 - **Please prepare one folder for this Workshop**
+:::
 
 ## Step 1: Create files
 
@@ -127,7 +129,7 @@ docker run -d -p 80:80  my-web:v1
 docker exec -it {container_id/NAME} {command}
 ```
 - [docker exec](https://docs.docker.com/engine/reference/commandline/exec/)
-
+- **-it** for interactive shell
 - There are many shell commands. For example, **bash**, **sh**, **zsh**, and more depend on **Base Image**.
 - **nginx container** does not have **bash** but it has **sh**
 
@@ -164,6 +166,8 @@ bin                   docker-entrypoint.sh  home                  mnt           
 dev                   etc                   lib                   opt                   run                   sys                   var
 docker-entrypoint.d   hello.txt             media                 proc                  sbin                  tmp
 ```
+- saw **hello.txt**
+
 4. exit from this container
 ```
 exit
@@ -182,7 +186,7 @@ output
 CONTAINER ID   IMAGE                      COMMAND                  CREATED          STATUS          PORTS                    NAMES
 c20808a474ac   my-web:v1                  "/docker-entrypoint.…"   4 seconds ago    Up 2 seconds    0.0.0.0:80->80/tcp       jolly_colden
 ```
-
+- new ID new Container
 2. make sure that hello.txt is not here
 ```bash
 docker exec -it c20 sh

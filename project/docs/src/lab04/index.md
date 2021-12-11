@@ -9,20 +9,64 @@ Firstly, we will be focusing on how to create a container without using Docker-c
 2. How to use Docker container.
 
 ## What is Docker?
-- Basically, it looks like VM but it is **NOT** VM.
-- for more information please read here [Docker](https://docs.docker.com/get-started/overview/)
+- Basically, it looks like VM but it is **NOT** VM. It is the **process**.
+- For more informations please read here [Docker](https://docs.docker.com/get-started/overview/)
+- Let say something like this. Assume you want to create your Django App with some databases with your team.
+  - Situation 1
+    - What do you need to do?
+      - Install Python 3.8
+      - **pip** many packages (For example Django V3)
+      - Install X database version 2
+      - coding 
+    - In other sides (your friends in your team) want to help you coding.
+      - Install Python 3.9
+      - **pip** Django V4
+      - Install X database version 3
+      - **Cannot** run your code or missing some packages **BOOM!**
+  - Situation 2
+    - What do you need to do? (Assume you use Windows machine)
+      - Install Python 3.8
+      - **pip** many packages (For example Django V3)
+      - Install X database version 2
+      - coding 
+    - Let say, you already done your jobs. You want to deploy to Ubuntu server.
+      - How could you make sure that your **dev environment** is same as **production environment**?
 
+- Docker can address those problems by create your own **environment**. Therefore, you can run your App in another machines with same **environment**.
+- **Environment** == **Docker Container**
+
+::: tip
+
+- To make it short, Docker can solve "It works on my machine (but another machine cannot)."
+  
+:::
 
 ## Install Docker
 
 ### Windows User
+
+::: warning Note for Windows User
+
+For Windows User, we have a few ways how to get Docker.
+- Docker Desktop with Hyper-V
+- Docker Desktop with WSL2
+- WSL2 and install Docker CE and Docker Client inside it
+
+Currently, Docker Desktop with WSL2 is the best way.
+:::
+
+::: tip
+For those who are using Windows for ML training with GPU. Docker Desktop WSL2 is support!
+:::
+
 - Download Docker Desktop [link](https://www.docker.com/products/docker-desktop)
-- You need to install WSL2 for Docker Engine. (Please follow the guide)
+- You need to install WSL2 (Version 2 Only!) for Docker Engine. (When you are installing **DockerDesktop.exe**, it would tell you how to do. Please follow it.)
 
 ### Mac OS User
 - Download Docker Desktop [link](https://www.docker.com/products/docker-desktop)
 
 ### Ubuntu User
+- remove old Docker in your machine and install new one with those scripts.
 ```bash
 wget get.docker.com -O docker.sh
 ```
@@ -112,7 +156,7 @@ output
 8788afbe7a64   hello-world                "/hello"                 22 minutes ago   Exited (0) 2 minutes ago                            vigilant_mendeleev
 ```
 
-## Workshop 1: Create your own Docker Image with Dockerfile
+## Workshops: Create your own Docker Image with Dockerfile
 
 ### [Hello SAD Class](./hello-sad-class.md)
 ### [Nginx](./nginx.md)

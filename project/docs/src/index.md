@@ -8,4 +8,6 @@
 
 [Lab 4: Docker](./lab04/index.md)
 
-[Lab 5: Docker compose + 3 Databases and Django CRUD](./lab05/index.md)
+[Lab 5: Docker and Databases](./lab05/index.md)
+
+[Lab 6: Docker Compose](./lab06/index.md)

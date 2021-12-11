@@ -1,6 +1,9 @@
 # Workshop: FastAPI
 
+::: warning
 - **Please prepare one folder for this Workshop**
+:::
+
 
 ## Step 0: Discussion
 - As you can see on previous workshop [Nginx](./nginx.md). If you change the content of **index.html**, you would need to build an Image again.
@@ -95,7 +98,7 @@ output
 CONTAINER ID   IMAGE                      COMMAND                  CREATED         STATUS         PORTS                    NAMES
 e11d2a5662a8   my-fastapi:v1              "/bin/sh -c 'uvicorn…"   3 minutes ago   Up 3 minutes   0.0.0.0:8000->8000/tcp   unruffled_noether
 ```
-- remove the container
+- remove the container and finish this lab
 ```bash
 docker rm e11d -f
 ```
