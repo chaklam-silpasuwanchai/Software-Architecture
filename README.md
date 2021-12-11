@@ -1,5 +1,7 @@
 This repo was created by Vuepress
 
+Temp Docs: https://docs.google.com/document/d/1l-C-aU1jMwVmnGjXlPu5x3TSOOiGUVsQf0Ia9SwW3xs/edit
+
 Github Page: https://chaklam-silpasuwanchai.github.io/Software-Architecture/
 
 # How to get started
