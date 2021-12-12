@@ -1,0 +1,37 @@
+version: "3"
+services: 
+   
+    api:
+        build:
+            context: ./webapp
+            dockerfile: Dockerfile
+  
+        ports:
+            - "8000:8000"
+        volumes:
+            - ./webapp/src:/home/src
+        secrets:
+            - mongo_user
+            - mongo_password
+     
+
+    mongo:
+        image: mongo:3.6.22-xenial
+
+        secrets:
+          - mongo_user
+          - mongo_password
+        environment:
+          - MONGO_INITDB_ROOT_USERNAME_FILE=/run/secrets/mongo_user
+          - MONGO_INITDB_ROOT_PASSWORD_FILE=/run/secrets/mongo_password
+
+        volumes: 
+            - mongo-sad-lab6:/data/db
+volumes: 
+  mongo-sad-lab6:
+
+secrets:
+  mongo_user:
+    file: mongo_user.txt
+  mongo_password:
+    file: mongo_password.txt
