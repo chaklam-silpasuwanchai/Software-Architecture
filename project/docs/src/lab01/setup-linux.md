@@ -18,7 +18,7 @@ Chossing this way will allowed your Ubuntu to have an access to all resources (C
 
 ::: danger The Bad
 
-1. Installing any OS might cause you to lose all of your data. You may need an expericed person to help you on this.
+1. Installing any OS might cause you to lose all of your data. You may need an experienced person to help you on this.
 2. Many application you need might not be there for you (Adobe suite, Microsoft Office suite). However, there are alternatives and mostly free.
 
 :::
