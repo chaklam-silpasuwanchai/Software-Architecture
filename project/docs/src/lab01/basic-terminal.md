@@ -47,7 +47,7 @@ total 0
 -rw-rw-r-- 1 {your_name} {your_name} 0 Dec  9 22:39 paper
 ```
 
-Now, we going to manually write current date and time into our paper.
+Now, we are going to manually write current date and time into our paper.
 
 ```sh
 date >> paper # ask date time from system and route the output to 'paper'
@@ -78,7 +78,7 @@ Thu 09 Dec 2021 10:48:25 PM +07
 Thu 09 Dec 2021 10:48:25 PM +07
 ```
 
-Now, instead of we write this ourselve, we ask cron to do it every minute.
+Now, instead of we write this ourselve, we ask cron to do this every minute.
 
 ```sh
 crontab -e # this will enter your default crontab file.
@@ -369,7 +369,7 @@ timestamps,e1,e2,e3,e4,e5,e6,e7,e8,Marker|---|timestamps|==|e1
 
 Explanation time: `awk` loops through lines of `10-audio.csv`. It seperates each line into column with ` ` as a default delimiter. `$1`,`$2`,... refers to colums in order from left to right with `$0` refers to the entire line. In the previous example, option `-F` overrides the defult delimiter to a comma (`,`).
 
-Now, `10-audio.csv` has 10 columns. I want to have this data but only colums `e1,e3,e4,e8,Marker`. For extra fun, I will add a new index in the most left column.
+Now, `10-audio.csv` has 10 columns. I want to have this data but only colums `e1,e3,e4,e8,Marker`. For extra fun, I will add a new index in the first column.
 
 ```sh
 awk -F , 'BEGIN {cnt="index"} {print cnt "," $2 "," $4 "," $5 "," $9 "," $10; ++cnt}' 10-audio.csv | head
@@ -470,11 +470,109 @@ The meaning from the dictionary.
 >
 > Environment (noun): the conditions in which a person, animal or plant lives or operates or in which an activity takes place
 
-In my words, **Environment** is the thing that defined why two rooms are different. Why would you choose to work at Library over your bedroom (or someone might choose otherwise). Why is your phone different from another phone. In UNIX it is the same. Start from what package is installed, which version?. These are a part of ***Environment**.
+In my words, **Environment** is the thing that defined why two rooms are different. Why would you choose to work at Library over your bedroom (or someone might choose otherwise). Why is your phone different from another phone. In UNIX, it is the same concept. Start from what package is installed, which version?. These are a part of **Environment**.
 
-**Variable Environment** is a variable (just like in your programming language) in that environment. Before we understand why we need this, let's play around with this concept.
+**Environment Variable** is a variable (just like in your programming language) in that environment. Before we understand why we need this, let's play around with this concept.
 
+Open your terminal and type `echo $PATH`
 
+```sh
+echo $PATH
+```
+
+**Output**: (Your output will be different from mine)
+
+```Text
+/usr/bin:/usr/local/freesurfer/7.2.0//bin:/usr/local/freesurfer/7.2.0//fsfast/bin:/usr/local/freesurfer/7.2.0//tktools:/usr/local/freesurfer/7.2.0//mni/bin:/home/{your_name}/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/usr/local/freesurfer/7.2.0/bin
+```
+
+`$PATH` is one of the variable in your environment and it uses to define where the commands are located. Let's create our own command for fun.
+
+```sh
+cd ~/.local/bin
+echo 'echo "Hello "`whoami`", welcome to SAD."' > greeting
+chmod +x greeting 
+greeting 
+```
+
+**Output**:
+
+```Text
+Hello {your_name}, welcome to SAD.
+```
+
+What we just did is create a script named *greeting*, tell the system that it is executable, and call the script. You can call this *greeting* script from anywhere in your system as long as `~/.local/bin` is in the `$PATH`.
+
+#### Variable vs Environment Variable
+
+To make thing even more confuse, there are **variable** and **Environment variable**. While the usage is the same, the effect of both is a bit different.
+
+```sh
+VAR_A=10        # This is Variable
+export VAR_B=20 # This is Environment Variable
+expr $VAR_A + $VAR_B # Calculate plus on $VAR_A and $VAR_B
+```
+
+**Output**:
+
+```Text
+30
+```
+
+The `export` command tells the inherit/child process to declare this variable. Confuse?
+
+```sh
+cd ~/playGrd
+touch var_vs_varEn
+echo 'echo $VAR_A' >> var_vs_varEn
+echo 'echo $VAR_B' >> var_vs_varEn
+chmod +x var_vs_varEn
+./var_vs_varEn
+```
+
+**Output**:
+
+```Text
+
+20
+```
+
+The first line is supposed to print *10* but it is blank. Because when you call your script, it forks a new child and runs it. The forking process includes `export` script in the beginning. Therefore, there is variable `$VAR_B` and not `$VAR_A`
+
+```sh
+export
+```
+
+**Output**:(Your output will be different from mine)
+
+```Text
+declare -x COLORTERM="truecolor"
+declare -x DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus"
+declare -x DESKTOP_SESSION="ubuntu"
+declare -x DISPLAY=":0"
+declare -x DOCKER_HOST="unix:///run/user/1000/docker.sock"
+declare -x FIX_VERTEX_AREA=""
+declare -x FMRI_ANALYSIS_DIR="/usr/local/freesurfer/7.2.0//fsfast"
+...
+```
+
+```sh
+export | grep VAR_B
+```
+
+**Output**:
+
+```Text
+declare -x VAR_B="20"
+```
+
+#### But Why?
+
+There are many use cases for **Environment Variable**. One easy use case is when you are developing your application. You will often write the code in your personal laptop. Once you done with developing, the app needs to be deployed on server. This two stages deploying scheme (Laptop = Dev stage, Server = Production Stage) is a common workflow. One problem is the configuration in your app might need to be changed according to each stage ([Configuration Management](https://www.atlassian.com/continuous-delivery/principles/configuration-management)).
+
+1. **Manual**: of course, the most basic way is to change the configuration manually everytime you deploy.
+2. **Seperate Stage Configuration**: You write two configuration files and everytime you deploy, you simply change the name of the configuration file. (maybe, dev-config, prod-config, and config)
+3. **Environment Variable**: The first two ways still require some level of human work. This way, your app will automatically aware of the stage. You might `export STAGE="dev"` on your local and `export STAGE="prod"` on the server. The app (depen on programming language) can check these `export` list and write a basic `if` statement and load the intened configuration file.
 
 <div class="page-nav"><p class="inner">
     <span class="prev"> 
@@ -482,7 +580,7 @@ In my words, **Environment** is the thing that defined why two rooms are differe
         <a href="./setup-linux.html" class="">Workshop 2 - Have accessible Linux environment</a>
     </span> 
     <span class="next">
-        <a href="./setup-linux.html" class=""></a>
-        <!-- → -->
+        <a href="./home-work-1.html" class="">Home Work</a>
+        →
     </span></p>
 </div>
