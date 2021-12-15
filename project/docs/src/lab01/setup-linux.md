@@ -31,7 +31,7 @@ Chossing this way will allowed your Ubuntu to have an access to all resources (C
 
 Virtual Machine (VM) is a technology where we emulate a machine. In a very non technical words, you run windows on your windows (WindowsCeption!!!!!). A truly technical information of this technology can be found internet which you should read. For now, we focus on your Ubuntu.
 
-To have this technology, you will need a software that handling this emulating. In Windows, you can use [Oracle VirtualBox](https://www.virtualbox.org/) (Free) or [VMware Workstation Pro](https://www.vmware.com/products/workstation-pro.html) (Fortune). There are other alternatives. In this workshop, we focus on a free Oracle VirtualBox because it supports both Windows and MacOS X.
+To have this technology, you will need a software that handling this emulating. In Windows, you can use [Oracle VirtualBox](https://www.virtualbox.org/)or [VMware Workstation Player](https://www.vmware.com/products/workstation-player.html). There are other alternatives. In this workshop, we focus on a VMware Workstation Player because I like it.
 
 ::: tip The Good
 
