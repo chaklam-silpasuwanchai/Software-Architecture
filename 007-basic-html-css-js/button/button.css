@@ -1,0 +1,15 @@
+.main-layout button {
+    transition: all .2s;
+}
+
+.main-layout button:hover {
+    color: #F5F5F5;
+    background-color: #121212;
+    cursor: pointer;
+}
+
+.main-layout button:active {
+    color: #F5F5F5;
+    background-color: #121212;
+    transform: translateY(.2rem);
+}
