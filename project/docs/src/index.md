@@ -2,7 +2,7 @@
 
 [Lab 1: Set up your machine](./lab01/lab01.md)
 
-[Lab 2: Basic Django](./lab02/index.md)
+[Lab 2: Basic Web App](./lab02/index.md)
 
 [Lab 3: Dynamic web with Postgresql](./lab03/index.md)
 
