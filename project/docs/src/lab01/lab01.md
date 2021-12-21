@@ -8,13 +8,13 @@ Of cause, building a web alone is boring. You will work together with your teamm
 
 To get ready for your new journey, today we will achieve the following objectives.
 
-[1. Setup your GitHub](./setup-github.md)
+[Workshop 1 - Setup your GitHub](./setup-github.md)
 
-[2. Have accessible Linux environment](./setup-linux.md)
+[Workshop 2 - Have accessible Linux environment](./setup-linux.md)
 
-[3. Learn basic Terminal command](./basic-terminal.md)
+[Workshop 3 - Learn basic Terminal command](./basic-terminal.md)
 
-[4. Home Work](./home-work-1.md)
+[Workshop 4 - Home Work](./home-work-1.md)
 
 <div class="page-nav"><p class="inner">
     <span class="prev"> 
