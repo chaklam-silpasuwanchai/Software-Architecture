@@ -70,3 +70,140 @@ Now, both browser does display our file the same way. Does it? Observe closely. 
 Now, let's only focus on **Google Chrome**.
 
 As you see from the `Inspect` tool, browser put our data inside the tag `<body>` and complete the HTML document for us by adding `<head>` and `<html>` tag. 
+
+Let's just complete our document using the HTML provided from the **Google Chrome** `Inspect` tool.
+
+```html
+<html>
+    <head>
+    </head>
+    <body>
+        <div>
+            <h1>HelloWorld</h1>
+            <b>Task 1-1:</b>HyperText Markup Language (HTML)
+        </div>
+    </body>
+</html>
+```
+
+This section stop here because if we go furthur than this we will study how to write HTML instead of understanding what is HTML and its role.
+
+## Task 1-2. Cascading Style Sheets (CSS)
+
+Currently, **Google Chrome** renders `myHTML.html` as a plain text. If you want your website to look fancier and colourful then you will need Cascading Style Sheets (CSS).
+
+Cascading Style Sheets (CSS) is another language with its own syntax. It is designed to tell interpretator (browser) how to render the document. Currently, each browser has its own default CSS (as shown in previous task).
+
+Now, we want to be in-control-of what to be rendered. Perhaps, we want `<h1>` for displaying text bigger than what it already is. There are multiple ways you an achived this.
+
+**Example of what I want**:
+
+<img src="./images/lab2-task1-2_1.png">
+
+### 1-2.1 Inline CSS
+
+```html {6}
+<html>
+    <head>
+    </head>
+    <body>
+        <div>
+            <h1 style="font-size: 100px;">HelloWorld</h1>
+            <b>Task 1-1:</b>HyperText Markup Language (HTML)
+        </div>
+    </body>
+</html>
+```
+
+### 1-2.2 Seperate CSS section
+
+```html {5-9}
+<html>
+    <head>
+    </head>
+    <body>
+        <style>
+            h1 {
+                font-size: 100px;
+            }
+        </style>
+        <div>
+            <h1>HelloWorld</h1>
+            <b>Task 1-1:</b>HyperText Markup Language (HTML)
+        </div>
+    </body>
+</html>
+```
+
+```html {3-7}
+<html>
+    <head>
+        <style>
+            h1 {
+                font-size: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>HelloWorld</h1>
+            <b>Task 1-1:</b>HyperText Markup Language (HTML)
+        </div>
+    </body>
+</html>
+```
+
+```html {9-13}
+<html>
+    <head>
+    </head>
+    <body>
+        <div>
+            <h1>HelloWorld</h1>
+            <b>Task 1-1:</b>HyperText Markup Language (HTML)
+        </div>
+        <style>
+            h1 {
+                font-size: 100px;
+            }
+        </style>
+    </body>
+</html>
+```
+
+### 1-2.3 Seperate CSS file
+
+This is the same as the previous one but instead of HTML and CSS in one single file, we can divided them into multiple files. 
+
+myHTML.html
+
+```html {3}
+<html>
+    <head>
+        <link rel="stylesheet" href="./myStyle.css">
+   </head>
+    <body>
+        <div>
+            <h1>HelloWorld</h1>
+            <b>Task 1-1:</b>HyperText Markup Language (HTML)
+        </div>
+    </body>
+</html>
+```
+
+myStyle.css
+
+```css
+h1 {
+    font-size: 100px;
+}
+```
+
+------------
+
+CSS can do much more. From formatting your document to create an animation. Mastering HTML and CSS is one of the area on its own.
+
+## Task 1-3. Distributing our document with Web Server.
+
+Everything we have done so far is only done in an Offline manner. **Google Chrome** opens our `myHTML.html` directly from the path `file:///home/{your_name}/playGrd/myHTML.html`. In order to distribute our web, we need a web server.
+
