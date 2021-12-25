@@ -19,6 +19,8 @@ Should we worry that our web is a web application or just a web? A better questi
 
 [Workshop 1 - Core component of Web](./core-component-of-web.md)
 
+[Workshop 2 - Dynamic Website](./dynamic-website.md)
+
 <div class="page-nav"><p class="inner">
     <span class="prev"> 
         <!-- ←
