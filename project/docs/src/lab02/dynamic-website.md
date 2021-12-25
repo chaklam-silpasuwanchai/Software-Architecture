@@ -19,7 +19,70 @@ A dynamic website has some level of programming involved. There are two kinds of
 
 ## Task 2-1. Client-Side Code
 
-asd
+As the name suggests, this is the code that exceute on the client (your browser). In the document, there is a section of this code. The browser will runs the code. The common and widely use language for this is `JavaScript`.
+
+Let's write `JavaScript` into our site. Augment our `myHTML/index.html` as follow.
+
+```html {5-7}
+<html>
+    <head>
+   </head>
+    <body>
+        <script>
+            console.log("my first javascript~~~~!!");
+        </script>
+        <div>
+            <h1>HelloWorld</h1>
+            <b>Task 1-1:</b>HyperText Markup Language (HTML)
+        </div>
+        <link rel="stylesheet" href="./myStyle.css">
+    </body>
+</html>
+```
+
+In your browser, open the `console` by *right click > inspect* and select *console* tab. Enter `localhost/myHTML` in the address bar and enter.
+
+<img src="./images/lab2-task2-1_1.png">
+
+### Script Order
+
+What runs first? We can run figure this out by augmenting our code.
+
+```html {5-9,14-16,18-20}
+<html>
+    <head>
+   </head>
+    <body>
+        <script>
+            alert('a');
+            console.log("my first javascript~~~~!!");
+            alert('b');
+        </script>
+        <div>
+            <h1>HelloWorld</h1>
+            <b>Task 1-1:</b>HyperText Markup Language (HTML)
+        </div>
+        <script>
+            alert('c');
+        </script>
+        <div>
+            <h1>HelloWorld 2</h1>
+            <b>Task 1-1:</b>HyperText Markup Language (HTML)
+        </div>
+        <script>
+            alert('d');
+        </script>
+        <link rel="stylesheet" href="./myStyle.css">
+        <script>
+            alert('e');
+        </script>
+    </body>
+</html>
+```
+
+Observe each alert closely and you will see that the the document is indeed runs as a script (from top to bottom).
+
+
 
 ## Task 2-2. Server-Side Code
 
