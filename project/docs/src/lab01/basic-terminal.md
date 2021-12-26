@@ -580,7 +580,7 @@ There are many use cases for **Environment Variable**. One easy use case is when
         <a href="./setup-linux.html" class="">Workshop 2 - Have accessible Linux environment</a>
     </span> 
     <span class="next">
-        <a href="./home-work-1.html" class="">Home Work</a>
+        <a href="./home-work-1.html" class="">Homework</a>
         →
     </span></p>
 </div>

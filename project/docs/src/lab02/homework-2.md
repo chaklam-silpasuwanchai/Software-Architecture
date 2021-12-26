@@ -1,4 +1,4 @@
-# Lab1 - Homework
+# Lab2 - Homework
 
 For this first lab, your assignment is very easy.
 
