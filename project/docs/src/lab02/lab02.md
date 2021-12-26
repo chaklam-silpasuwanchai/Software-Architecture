@@ -21,6 +21,8 @@ Should we worry that our web is a web application or just a web? A better questi
 
 [Workshop 2 - Dynamic Website](./dynamic-website.md)
 
+[Homework](./homework-2.md)
+
 <div class="page-nav"><p class="inner">
     <span class="prev"> 
         <!-- ←
@@ -31,33 +33,3 @@ Should we worry that our web is a web application or just a web? A better questi
         →
     </span></p>
 </div>
-
-## Start Coding
-
-::: warning
-- **Please prepare one folder for this Workshop**
-:::
-
-### project structure
-
-```
-+-- pure-html
-|    +-- button 
-|    |   +-- app.js
-|    |   +-- button.css
-|    |   +-- index.html
-|    +-- interval 
-|    |   +-- app.js
-|    |   +-- index.html
-|    +-- index.html
-|    +-- main-style.css
-```
-
-<StaticLink :href="$withBase('/pure-html/index.html')"> Click here for Preview this Project</StaticLink>
-
-<a :href="$withBase('/pure-html.zip')">Download this Project</a>
-
-
-## Start Web Server with [Apache](https://httpd.apache.org/)
-
-ฝากด้วยพี่โจ๋
