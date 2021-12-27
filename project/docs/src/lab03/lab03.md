@@ -12,7 +12,7 @@ Note: `Django` document is well written. Definitely recommend.
 
 [Workshop 2 - Django Philosophy](./lab03_2.md)
 
-[Homework](./homework-2.md)
+[Homework](./homework-3.md)
 
 <div class="page-nav"><p class="inner">
     <span class="prev"> 

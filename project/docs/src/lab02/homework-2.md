@@ -8,7 +8,8 @@ For this second lab, your assignment is also very easy.
 4. Publish the project in your localhost
 5. Edit the first page by put your name into it. (Anywhere Anyhow you like)
 6. Create another page that contain a button. Once click, the list of your team member appear.
-7. Write a simple report and submit in PDF format to the Google Classroom.
+7. Push your complete project to your GitHub.
+8. Write a simple report and submit in PDF format to the Google Classroom.
 
 ## project structure
 
