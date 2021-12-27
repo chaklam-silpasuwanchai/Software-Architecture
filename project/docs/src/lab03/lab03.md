@@ -10,7 +10,7 @@ Note: `Django` document is well written. Definitely recommend.
 
 [Workshop 1 - Installation](./lab03_1.md)
 
-[Workshop 2 - Dynamic Website](./dynamic-website.md)
+[Workshop 2 - Django Philosophy](./lab03_2.md)
 
 [Homework](./homework-2.md)
 
