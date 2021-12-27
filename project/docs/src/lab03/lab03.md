@@ -2,22 +2,13 @@
 
 ## Objective
 
-Hey Hey Hey everyone, welcome back to the second session of Software Architecture and Design lab. Today, we will explore **basis of Website Technology**. By basis I mean from nothing to something.
+Greetings students of SAD. By this lab, you must already committed to this course. Are you having fun?. Probably not... yet. You will. Because, after two labs of hard working and from scratching, we will learn to do this the better way.
 
-Before we go futhur, let's ask what really is Web application and when and how is it different from normal web.
+In this lab, we will finally take a look at a `Python` web framework call `Django`. This lab objective is to introduce you to the `Django` and develop website in `Python` environment.
 
-## History
+Note: `Django` document is well written. Definitely recommend.
 
-There is only two types of Web. Static Web and Dynamic Web. The discriminator between the two is how is the content served. If the content is fixed then it is a static website. If the content changed without chaning the source code then it is a dynamic website. 
-
-Th static website is rearly seen in today technology. Most of the web we are using today is a dynamic website.
-
-Then what is a web application? The easy explanation is an application running on web technology. The contrastive example is Microsoft Words and Google Docs. Both of them is designed to be a word processing application but Microsoft Words has to be installed while Google Docs only needs an internet and a browser. 
-
-Should we worry that our web is a web application or just a web? A better question to ask is does it matter? After the next two labs (lab2 and lab3), you will have your answer.
-
-
-[Workshop 1 - Core component of Web](./core-component-of-web.md)
+[Workshop 1 - Installation](./lab03_1.md)
 
 [Workshop 2 - Dynamic Website](./dynamic-website.md)
 
@@ -29,7 +20,7 @@ Should we worry that our web is a web application or just a web? A better questi
         <a href="./setup-linux.html" class="">Workshop 2 - Have accessible Linux environment</a> -->
     </span> 
     <span class="next">
-        <a href="./core-component-of-web.html" class="">Workshop 1 - Core component of Web</a>
+        <a href="./lab03_1.html" class="">Workshop 1 - Core component of Web</a>
         →
     </span></p>
 </div>
