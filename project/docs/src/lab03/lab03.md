@@ -20,7 +20,7 @@ Note: `Django` document is well written. Definitely recommend.
         <a href="./setup-linux.html" class="">Workshop 2 - Have accessible Linux environment</a> -->
     </span> 
     <span class="next">
-        <a href="./lab03_1.html" class="">Workshop 1 - Core component of Web</a>
+        <a href="./lab03_1.html" class="">Workshop 1 - Installation</a>
         →
     </span></p>
 </div>
