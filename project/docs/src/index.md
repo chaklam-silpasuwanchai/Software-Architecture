@@ -4,7 +4,7 @@
 
 [Lab 2: Basic Web App](./lab02/lab02.md)
 
-[Lab 3: Dynamic web with Postgresql](./lab03/index.md)
+[Lab 3: Using a Framework](./lab03/lab03.md)
 
 [Lab 4: Docker](./lab04/index.md)
 
