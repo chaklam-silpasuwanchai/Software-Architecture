@@ -1,4 +1,4 @@
-# Lab 2: Using A Framework
+# Lab 3: Using A Framework
 
 ## Objective
 

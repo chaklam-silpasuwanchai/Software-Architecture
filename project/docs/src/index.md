@@ -11,3 +11,4 @@
 [Lab 5: Docker and Databases](./lab05/index.md)
 
 [Lab 6: Docker Compose](./lab06/index.md)
+
