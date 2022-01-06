@@ -146,7 +146,7 @@ def init_obj():
 init_obj()
 ```
 
-## It's time for create our containers.
+## It's time! Let's create our containers.
 
 [docker-compose CLI](https://docs.docker.com/compose/reference/)
 
