@@ -1,6 +1,6 @@
 # Lab 6: Docker Compose
 
-Hiiiiiii guys, This lab we learn what is Docker Compose and why do we need to use it. Basically, [Docker compose](https://docs.docker.com/compose/) is a configuation file for **container**. It helps you manage more than one **container**s. Even though, you have only one **container**, **Docker compose** would be still useful.
+Hiiiiiii guys, This lab we would learn what is Docker Compose and why do we need to use it. Basically, [Docker compose](https://docs.docker.com/compose/) is a configuation file for **container**. It helps you manage more than one **container**s. Even though, you have only one **container**, **Docker compose** would be still useful.
 
 
 ## Why is Docker-compose useful?
