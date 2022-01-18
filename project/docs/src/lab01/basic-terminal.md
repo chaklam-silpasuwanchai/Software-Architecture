@@ -221,7 +221,8 @@ wc doc
 
 ### 3. sed
 
-Download [10-audio.csv](/sample-data/10-audio.csv) file.
+<!-- Download [10-audio.csv](/sample-data/10-audio.csv) file. -->
+Download <a :href="$withBase('/sample-data/10-audio.csv')">10-audio.csv</a> file.
 
 ```sh
 mv ~/Downloads/10-audio.csv ~/playGrd/
