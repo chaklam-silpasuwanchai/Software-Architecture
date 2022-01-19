@@ -1,0 +1,22 @@
+version: "3"
+services: 
+
+    frontend:
+          build:
+            context: ./frontend
+
+          ports:
+            - "80:80"
+          volumes:
+            - ./frontend/src:/usr/share/nginx/html
+
+
+    backend:
+          build:
+            context: ./backend
+            dockerfile: Dockerfile.dev
+
+          ports:
+            - "8000:8000"
+          volumes:
+            - ./backend/src:/home/src 

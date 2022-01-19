@@ -14,4 +14,4 @@
 
 [Lab 7: Jenkins (CI/CD)]()
 
-[Lab 8: Containers (Mini-Microservice) and Web Socket](./lab08/index.md)
+[Lab 8: WebSocket and Containers (Mini-Microservice)](./lab08/index.md)

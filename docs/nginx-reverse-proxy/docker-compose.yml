@@ -1,0 +1,38 @@
+version: "3"
+services: 
+
+
+    nginx:
+        build:
+            context: ./nginx
+        ports:
+            - "80:80"
+            
+   
+    frontend:
+        build:
+            context: ./frontend
+        
+        volumes:
+          - ./frontend/src:/usr/share/nginx/html
+
+    backend:
+        build:
+            context: ./backend
+            dockerfile: Dockerfile.dev
+  
+        volumes:
+            - ./backend/src:/home/src
+     
+ 
+    mongo:
+        image: mongo:3.6.22-xenial
+
+        environment:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: 1234
+
+        volumes: 
+            - mongo-sad-lab-nginx-proxy:/data/db
+volumes: 
+  mongo-sad-lab-nginx-proxy:

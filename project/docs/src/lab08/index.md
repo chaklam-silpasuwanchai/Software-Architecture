@@ -1,12 +1,12 @@
-# Lab 8: Containers (Mini-Microservice) and WebSocket
+# Lab 8: WebSocket and Containers (Mini-Microservice)
 
 Hi guys, This lab we would learn about WebSocket protocol. Lastly, we will learn about Proxy Server for mini-microservice app(s). 
 
 
-## Workshop
+## Workshops
 
-### [Websocket]()
+### [Websocket](./websocket.md)
 
-### [Nginx Reverse Proxy]()
+### [Nginx Reverse Proxy Server](./nginx.md)
 
-### [Traefik Reverse Proxy]()
+### [Traefik Reverse Proxy Server]()
