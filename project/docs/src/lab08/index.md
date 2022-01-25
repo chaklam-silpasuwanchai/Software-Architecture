@@ -9,4 +9,4 @@ Hi guys, This lab we would learn about WebSocket protocol. Lastly, we will learn
 
 ### [Nginx Reverse Proxy Server](./nginx.md)
 
-### [Traefik Reverse Proxy Server]()
+### [Traefik Reverse Proxy Server](./traefik.md)

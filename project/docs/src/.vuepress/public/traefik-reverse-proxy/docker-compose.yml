@@ -1,0 +1,64 @@
+version: "3"
+services: 
+
+    traefik:
+        image: traefik:v2.3
+    
+        ports:
+            - "80:80"
+            - "8080:8080"
+            - "443:443"
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+
+        environment:
+            - TRAEFIK_PROVIDERS_DOCKER=true
+
+
+            - TRAEFIK_ENTRYPOINTS_web=true
+            - TRAEFIK_ENTRYPOINTS_web_ADDRESS=:80
+
+            - TRAEFIK_ENTRYPOINTS_websecure=true
+            - TRAEFIK_ENTRYPOINTS_websecure_ADDRESS=:443
+
+
+            - TRAEFIK_API_INSECURE=true
+
+       
+    frontend:
+        build:
+            context: ./frontend
+        
+        volumes:
+            - ./frontend/src:/usr/share/nginx/html
+
+        labels:
+            - "traefik.http.routers.front.rule=PathPrefix(`/`)"
+            - "traefik.http.routers.front.entrypoints=web"
+            - "traefik.http.services.front.loadbalancer.server.port=80"
+
+    backend:
+        build:
+            context: ./backend
+            dockerfile: Dockerfile.dev
+  
+        volumes:
+            - ./backend/src:/home/src
+
+        labels:
+            - "traefik.http.routers.api.rule=PathPrefix(`/api`)" 
+            - "traefik.http.routers.api.entrypoints=web"
+            - "traefik.http.services.api.loadbalancer.server.port=8000"        
+     
+ 
+    mongo:
+        image: mongo:3.6.22-xenial
+
+        environment:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: 1234
+
+        volumes: 
+            - mongo-sad-lab-traefik-proxy:/data/db
+volumes: 
+  mongo-sad-lab-traefik-proxy:

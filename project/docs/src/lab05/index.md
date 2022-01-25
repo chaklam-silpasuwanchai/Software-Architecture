@@ -10,11 +10,12 @@ We assume that you are good in DMM.
 
 ### [Postgresql](./postgresql.md)
 
-## HW
-1. Setup MongoDB with Docker 
-2. Connect MongoDB with [MongoDB Compass](https://www.mongodb.com/products/compass) only.
-3. Insert some data.
-* please make a screenshot for each step and save it in PDF.
+## Homework
+1. Please make a screenshot for each step and save it in PDF.
+2. Setup MongoDB with Docker.
+3. Connect MongoDB with [MongoDB Compass](https://www.mongodb.com/products/compass) only.
+4. Insert some data.
+5. submit the PDF to the Google Classroom.
 
 
 

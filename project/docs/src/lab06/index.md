@@ -60,3 +60,11 @@ Example output
 ## Workshop
 
 ### [Counter](./counter.md)
+
+## Homework
+1. Create your own **Counter** web application container using Django (You can choose other framework except FastAPI :D ).
+   - You can use any database(s).
+   - You can decide how many view(s) do you want to use.
+1. Create a simple README.md to show your commands how to create and run your Image/Container.
+2. Push your complete project to your GitHub.
+3. Snapshot your WebApp and your Github link (link of your HW) and submit in PDF format to the Google Classroom.

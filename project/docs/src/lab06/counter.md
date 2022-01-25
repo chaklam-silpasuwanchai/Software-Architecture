@@ -83,10 +83,10 @@ volumes:
         ```bash
         export VARIABLE=value 
         ```
-- **volumes**: If you have **volume** object please define it too.**Docker compose** will show error if they cannot find **volume** object.
+- **volumes**: If you have **volume** object please define it too. **Docker compose** will show error if they cannot find **volume** object.
 
 mongo_connector.py [pymongo](https://pymongo.readthedocs.io/en/stable/)
-```python{6,7}
+```python{6-8}
 import pymongo #type:ignore
 from pymongo.mongo_client import MongoClient #type:ignore
 import os
