@@ -29,9 +29,9 @@ Chossing this way will allowed your Ubuntu to have an access to all resources (C
 >
 > Virtual (adjective): created by computer technology and appearing to exist but not existing in the physical world
 
-Virtual Machine (VM) is a technology where we emulate a machine. In a very non technical words, you run windows on your windows (WindowsCeption!!!!!). A truly technical information of this technology can be found internet which you should read. For now, we focus on your Ubuntu.
+Virtual Machine (VM) is a technology where we emulate a machine. In a very non technical words, you run Windows in your Windows (WindowsCeption!!!!!). A truly technical information of this technology can be found in internet which you should read. For now, we focus on your Ubuntu.
 
-To have this technology, you will need a software that handling this emulating. In Windows, you can use [Oracle VirtualBox](https://www.virtualbox.org/)or [VMware Workstation Player](https://www.vmware.com/products/workstation-player.html). There are other alternatives. In this workshop, we focus on a VMware Workstation Player because I like it.
+To have this technology, you will need a software that handling this emulating. In Windows, you can use [Oracle VirtualBox](https://www.virtualbox.org/) or [VMware Workstation Player](https://www.vmware.com/products/workstation-player.html). There are other alternatives. In this workshop, we focus on a VMware Workstation Player because I like it.
 
 ::: tip The Good
 
@@ -48,13 +48,28 @@ To have this technology, you will need a software that handling this emulating. 
 
 :::
 
-### Task 2-2-A. Download VirtualBox and install it
+### For VMware, mounting ShareFolder in Unbuntu
 
-1. Just download it according to your host OS. [link](https://www.virtualbox.org/wiki/Downloads)
-2. Install the downloaded file.
-3. While you are waiting, download an ISO of Ubuntu 20.04.3 LTS. [link](https://ubuntu.com/download/desktop)
+1. Finish configuring the share folder option in the VM setting
+2. Launch VM.
+3. Create a `hgfs` folder in `/mnt/`
+    - `sudo mkdir /mnt/hgfs`
+4. Run the mount command
+    - `sudo vmhgfs-fuse .host:/ /mnt/hgfs/ -o allow_other -o uid=1000`
+5. Go to `/mnt/hgfs/` to check whehter your Shared Folder is there.
+    - `cd /mnt/hgfs`
+    - `ls`
+6. Notice that once you reboot your VM, the Shared Folder is gone. To create a persistance mounting, do the following.
+    - `sudo vim /etc/fstab`
+    - add `vmhgfs-fuse    /mnt/hgfs    fuse    defaults,allow_other    0    0` to the last line, save and exist the file.
+    - `sudo mount -a`
+7. redo step 5 to check the result.
+8. enjoy~~! ( ^_^)b
+9. Tips: If you want to have this sharefolder on your desktop. Create a symbolic link with `ln -s`
+    - `ln -s /mnt/hgfs/<SharedFolder_name>/ ~/Desktop/<symbolic_link_name>
+`
 
-TODO: Continue this VirtualBox Guide
+*ref: https://askubuntu.com/questions/1239726/windows-host-shared-folder-in-ubuntu-20-04*
 
 ## Option 3. For Windows user only: WSL
 
