@@ -165,6 +165,9 @@ output
 ## Homework
 
 1. Create your own **HelloWorld** web application container using Django.
-2. Create a simple README.md to show your commands how to create and run your Image/Container.
+
+![img](./output.png)
+
+2. Create a simple README.md to show your commands how to create and run your Image and Container.
 3. Push your complete project to your GitHub.
 4. Snapshot your WebApp and your Github link (link of your HW) and submit in PDF format to the Google Classroom.
