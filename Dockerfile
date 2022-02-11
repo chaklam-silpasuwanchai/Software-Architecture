@@ -9,7 +9,7 @@ COPY ./project/docs/package.json .
 COPY ./project/docs/yarn.lock .
 RUN yarn install
 
-COPY ./project /home/project
+# COPY ./project /home/project
 
 
 CMD  tail -f /dev/null
