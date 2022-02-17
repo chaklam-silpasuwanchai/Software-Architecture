@@ -18,51 +18,17 @@
 - It is possible for one project would have more than one **container**. Therefore, I decided to create a new folder for WebApp **container**. Moverover, I decided to have another folder (**src**) for source code in WebApp **container**.
 - However, you can define your own project structure by yourself. This is what I want to recommand this style for you.
 
-Dockerfile
-```Dockerfile
-FROM python:3.9.7-buster
-WORKDIR /home/src
+./webapp/Dockerfile
 
-RUN pip install "fastapi==0.70.0"
-RUN pip install uvicorn[standard]
-RUN pip install "pymongo==3.12.0"
-RUN pip install "mypy==0.910"
+<<< @/src/.vuepress/public/counter/webapp/Dockerfile
 
-COPY ./src /home/src/
-EXPOSE 8000
-
-CMD uvicorn --host 0.0.0.0 main:app --forwarded-allow-ips '*' --reload 
-```
 - **CMD** command from [FastAPI](https://fastapi.tiangolo.com/)
 
+
 docker-compose.yml
-```yml{19,20}
-version: "3"
-services: 
-   
-    api:
-        build:
-            context: ./webapp
-            dockerfile: Dockerfile
-  
-        ports:
-            - "8000:8000"
-        volumes:
-            - ./webapp/src:/home/src
-     
 
-    mongo:
-        image: mongo:3.6.22-xenial
+<<< @/src/.vuepress/public/counter/docker-compose.yml{19,20}
 
-        environment:
-          MONGO_INITDB_ROOT_USERNAME: root
-          MONGO_INITDB_ROOT_PASSWORD: 1234
-
-        volumes: 
-            - mongo-sad-lab6:/data/db
-volumes: 
-  mongo-sad-lab6:
-```
 - **version**: It is version of **Docker-compose**, not **Docker engine**. Please do not be confused. You can check this [link](https://docs.docker.com/compose/compose-file/).
 - **services**: We will define our container(s) here.
   - **api**: This is **HOSTNAME** / **SERVICE NAME** for this container. You can name it anything.
@@ -85,66 +51,18 @@ volumes:
         ```
 - **volumes**: If you have **volume** object please define it too. **Docker compose** will show error if they cannot find **volume** object.
 
-mongo_connector.py [pymongo](https://pymongo.readthedocs.io/en/stable/)
-```python{6-8}
-import pymongo #type:ignore
-from pymongo.mongo_client import MongoClient #type:ignore
-import os
+./webapp/src/mongo_connector.py [pymongo](https://pymongo.readthedocs.io/en/stable/)
 
-class Mongo:
-    username="root"
-    password=1234
-    hostname="mongo"
-    uri=f"mongodb://{username}:{password}@{hostname}:27017"
-    client:MongoClient
+<<< @/src/.vuepress/public/counter/webapp/src/mongo_connector.py{6-8}
 
-    @staticmethod
-    def init():
-        if('MONGO_STRING_OPTIONS' in os.environ):
-            Mongo.uri+=os.environ['MONGO_STRING_OPTIONS']
-        temp=pymongo.MongoClient(Mongo.uri)
-        Mongo.client=temp
-
-    @staticmethod
-    def get_instance():
-        if not hasattr(Mongo,'client'):
-            Mongo.init()
-
-        return Mongo.client
-```
 - When we use **Docker compose**, you can use their **HOSTNAME/SERVICE NAME** for connecting with database instead of using IP address.
 - PS. If you do not use **Docker compose** (ex. **docker run** for each **container**), you need to join them by yourself.
 - PS2. You might see that we put secret password in our code and **docker-compose.yml** which are not good right? Hacker loves it. However, I will show a better way about how to keep our secret at the end of this lab.
 
-main.py [FastAPI](https://fastapi.tiangolo.com/)
-```python
-from fastapi import FastAPI
+./webapp/src/main.py [FastAPI](https://fastapi.tiangolo.com/)
 
-from mongo_connector import Mongo
+<<< @/src/.vuepress/public/counter/webapp/src/main.py
 
-app = FastAPI()
-
-
-@app.get("/")
-def read_root():
-    data = Mongo.get_instance()['my-db']['my-collection'].find_one({"name":"counter"},{'_id':0})
-    return data
-
-@app.get("/count")
-def add_count():
-    data = Mongo.get_instance()['my-db']['my-collection'].update_one({"name":"counter"},{"$inc":{"value":1}})
-    return {"result":data.modified_count}
-
-def init_obj():
-    data = [ d for d in Mongo.get_instance()['my-db']['my-collection'].find({"name":"counter"})]
-    if(not data):
-        new_data = {
-            "name":"counter",
-            "value": 0
-        }
-        Mongo.get_instance()['my-db']['my-collection'].insert_one(new_data)
-init_obj()
-```
 
 ## It's time! Let's create our containers.
 

@@ -12,6 +12,9 @@
 
 [Lab 6: Docker Compose](./lab06/index.md)
 
-[Lab 7: Jenkins (CI/CD)]()
+[Lab 7: Proxy server and Production Ready](./lab07/index.md)
 
-[Lab 8: WebSocket and Containers (Mini-Microservice)](./lab08/index.md)
+[Lab 8: Github Action with CI/CD]()
+
+[Lab 9: WebSocket, Docker context](./lab09/index.md)
+

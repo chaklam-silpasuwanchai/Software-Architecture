@@ -1,0 +1,25 @@
+version: "3"
+services: 
+   
+    api:
+        build:
+            context: ./webapp
+            dockerfile: Dockerfile
+  
+        ports:
+            - "8000:8000"
+        volumes:
+            - ./webapp/src:/home/src
+     
+
+    mongo:
+        image: mongo:3.6.22-xenial
+
+        environment:
+          MONGO_INITDB_ROOT_USERNAME: root
+          MONGO_INITDB_ROOT_PASSWORD: 1234
+
+        volumes: 
+            - mongo-sad-lab6:/data/db
+volumes: 
+  mongo-sad-lab6:
