@@ -12,19 +12,13 @@ services:
     frontend:
         build:
             context: ./frontend
-            dockerfile: dev.Dockerfile
+            dockerfile: prod.Dockerfile
         
-        volumes:
-          - ./frontend/src:/usr/share/nginx/html
-
     backend:
         build:
             context: ./backend
-            dockerfile: dev.Dockerfile
+            dockerfile: prod.Dockerfile
   
-        volumes:
-            - ./backend/src:/home/src
-     
  
     mongo:
         image: mongo:3.6.22-xenial

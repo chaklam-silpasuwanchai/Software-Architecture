@@ -12,12 +12,12 @@
 +-- backend
 |    +-- src 
 |    |   +-- main.py
-|    +-- Dockerfile.dev
+|    +-- dev.Dockerfile
 +-- frontend
 |    +-- src 
 |    |   +-- app.js
 |    |   +-- index.html
-|    +-- Dockerfile 
+|    +-- dev.Dockerfile
 +-- nginx
 |    +-- Dockerfile 
 |    +-- nginx.conf
@@ -30,9 +30,9 @@
 
 ### Backend
 
-./backend/Dockerfile.dev
+./backend/dev.Dockerfile
 
-<<< @/src/.vuepress/public/nginx-reverse-proxy/backend/Dockerfile.dev
+<<< @/src/.vuepress/public/nginx-reverse-proxy/backend/dev.Dockerfile{7,10}
 
 ./backend/src/main.py
 
@@ -40,9 +40,9 @@
 
 ### Frontend
 
-./frontend/Dockerfile
+./frontend/dev.Dockerfile
 
-<<< @/src/.vuepress/public/nginx-reverse-proxy/frontend/Dockerfile
+<<< @/src/.vuepress/public/nginx-reverse-proxy/frontend/dev.Dockerfile
 
 ./frontend/src/app.js
 
@@ -64,7 +64,7 @@
 <<< @/src/.vuepress/public/nginx-reverse-proxy/nginx/nginx.conf
 
 
-## Up
+### Up
 
 ```sh
 docker-compose up --build -d
@@ -73,15 +73,60 @@ docker-compose up --build -d
 - Go to [http://localhost](http://localhost)
 
 
-## Down and finish this workshop
+### Down and finish this session
 
 ```sh
 docker-compose down
 ```
 
+## Start Coding (Production)
 
+```{5,11,16}
++-- backend
+|    +-- src 
+|    |   +-- main.py
+|    +-- dev.Dockerfile
+|    +-- prod.Dockerfile
++-- frontend
+|    +-- src 
+|    |   +-- app.js
+|    |   +-- index.html
+|    +-- dev.Dockerfile
+|    +-- prod.Dockerfile
++-- nginx
+|    +-- Dockerfile 
+|    +-- nginx.conf
++-- docker-compose.yml
++-- docker-compose-prod.yml
+```
 
+./docker-compose-prod.yml
 
+<<< @/src/.vuepress/public/nginx-reverse-proxy/docker-compose-prod.yml
+
+### Backend
+
+./backend/prod.Dockerfile
+
+<<< @/src/.vuepress/public/nginx-reverse-proxy/backend/prod.Dockerfile{7,9-11}
+
+### Frontend
+
+./frontend/prod.Dockerfile
+
+<<< @/src/.vuepress/public/nginx-reverse-proxy/frontend/prod.Dockerfile{3}
+
+### Up
+
+```sh
+docker-compose -f ./docker-compose-prod.yml up --build -d
+```
+
+### Down and finish this lab
+
+```sh
+docker-compose -f ./docker-compose-prod.yml down
+```
 
 
 
