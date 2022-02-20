@@ -110,6 +110,10 @@ docker-compose down
 
 <<< @/src/.vuepress/public/nginx-reverse-proxy/backend/prod.Dockerfile{7,9-11}
 
+- Remove **Dev Dependency** (In this case is [mypy](https://mypy.readthedocs.io/en/stable/introduction.html).)
+- FastAPI would be production ready if we remove **--reload**.
+
+
 ### Frontend
 
 ./frontend/prod.Dockerfile

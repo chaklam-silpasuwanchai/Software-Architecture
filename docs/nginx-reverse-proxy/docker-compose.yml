@@ -12,6 +12,7 @@ services:
     frontend:
         build:
             context: ./frontend
+            dockerfile: dev.Dockerfile
         
         volumes:
           - ./frontend/src:/usr/share/nginx/html
@@ -19,7 +20,7 @@ services:
     backend:
         build:
             context: ./backend
-            dockerfile: Dockerfile.dev
+            dockerfile: dev.Dockerfile
   
         volumes:
             - ./backend/src:/home/src

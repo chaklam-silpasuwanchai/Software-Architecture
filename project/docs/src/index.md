@@ -12,9 +12,11 @@
 
 [Lab 6: Docker Compose](./lab06/index.md)
 
-[Lab 7: Proxy server and Production Ready](./lab07/index.md)
+[Lab 7: Proxy server, Production Ready and Docker context](./lab07/index.md)
 
-[Lab 8: Github Action with CI/CD]()
+[Lab 8: Docker Swarm](./lab08/index.md)
 
-[Lab 9: WebSocket, Docker context](./lab09/index.md)
+[Lab 9: Github Action with CI/CD]()
+
+[Lab 10: WebSocket](./lab10/index.md)
 
