@@ -24,7 +24,7 @@ There are three arguments and one option.
 - `-L` is an option for tunnelling
 - `8000:virtual3.cs.ait.ac.th:443:` is the argument of the tunnelling. The template is `<source port>:<tunnel to server>:<destination port>`. In our case, I want to access `virtual3.cs.ait.ac.th` port `443` and I will go to that port on my machine using `8000`.
 
-Once you run the command, you will have to enter the CSIM password and just leave the ssh session online. Then you can access the `https://virtual3.cs.ait.ac.th/` using `https://localhost:8080` on your machine.
+Once you run the command, you will have to enter the CSIM password and just leave the ssh session online. Then you can access the `https://virtual3.cs.ait.ac.th/` using `https://localhost:8000` on your machine.
 
 
 ## VMs information
