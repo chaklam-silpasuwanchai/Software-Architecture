@@ -20,3 +20,5 @@
 
 [Lab 10: WebSocket](./lab10/index.md)
 
+[Getting start with CSIM VM](./csimvm/index.md)
+
