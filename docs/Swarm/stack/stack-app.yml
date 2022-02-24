@@ -7,7 +7,7 @@ services:
           replicas: 3
           placement:
               constraints:
-                - "node.hostname==swarm-2"
+                - "node.hostname==swarm-1"
           labels:
               - "traefik.http.routers.front.rule=PathPrefix(`/`)"
               - "traefik.http.routers.front.entrypoints=web"

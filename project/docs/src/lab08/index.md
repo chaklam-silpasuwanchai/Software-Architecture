@@ -156,18 +156,52 @@ docker-compose -f compose-build.yml build
 docker-compose -f compose-build.yml push
 ```
 
+
+### Get Information about Service and Stack
+
 ```sh
 docker stack ps swarm-lab -f "desired-state=running"
 ```
 output
 ```
-ID             NAME                   IMAGE                        NODE      DESIRED STATE   CURRENT STATE              ERROR     PORTS
-y301np733hxc   swarm-lab_backend.1    127.0.0.1:5000/backend:v1    swarm-2   Running         Preparing 13 seconds ago
-vblajukllq6d   swarm-lab_frontend.1   127.0.0.1:5000/frontend:v1   swarm-2   Running         Preparing 13 seconds ago
-99s3abfr0yqn   swarm-lab_frontend.2   127.0.0.1:5000/frontend:v1   swarm-2   Running         Preparing 13 seconds ago
-g0n3higyop1s   swarm-lab_frontend.3   127.0.0.1:5000/frontend:v1   swarm-1   Running         Running 13 seconds ago
-ffxtzsf21za9   swarm-lab_mongo.1      mongo:3.6.22-xenial          swarm-2   Running         Running 8 seconds ago
-1zi8gs7nars8   swarm-lab_registry.1   registry:2.8                 swarm-1   Running         Running 22 seconds ago
-4c9u38jg5kqf   swarm-lab_traefik.1    traefik:v2.3                 swarm-1   Running         Running 19 seconds ago
+ID             NAME                   IMAGE                                    NODE      DESIRED STATE   CURRENT STATE            ERROR     PORTS
+m0xgkn321212   swarm-lab_backend.1    localhost:5000/raknatee/backend:1.0.0    swarm-2   Running         Running 5 minutes ago
+9sq0whxgju55   swarm-lab_backend.2    localhost:5000/raknatee/backend:1.0.0    swarm-2   Running         Running 5 minutes ago
+ir33prxah830   swarm-lab_backend.3    localhost:5000/raknatee/backend:1.0.0    swarm-2   Running         Running 5 minutes ago
+6d69kzj05tjw   swarm-lab_frontend.1   localhost:5000/raknatee/frontend:1.0.0   swarm-1   Running         Running 53 seconds ago
+kzqwjugh0wxf   swarm-lab_frontend.2   localhost:5000/raknatee/frontend:1.0.0   swarm-1   Running         Running 44 seconds ago
+e1efxbaw988o   swarm-lab_frontend.3   localhost:5000/raknatee/frontend:1.0.0   swarm-1   Running         Running 49 seconds ago
+t8afz5b9gnbg   swarm-lab_mongo.1      mongo:3.6.22-xenial                      swarm-2   Running         Running 25 minutes ago
+s4hkjlsbhw7m   swarm-lab_registry.1   registry:2.8.0                           swarm-1   Running         Running 26 minutes ago
+qgc47qsxy64r   swarm-lab_traefik.1    traefik:v2.3                             swarm-1   Running         Running 26 minutes ago
 ```
 
+<hr>
+
+```sh
+docker stack services swarm-lab
+```
+output
+```
+ID             NAME                 MODE         REPLICAS   IMAGE                                    PORTS
+r49y6f1d9xs6   swarm-lab_backend    replicated   3/3        localhost:5000/raknatee/backend:1.0.0
+uydnut9cr45m   swarm-lab_frontend   replicated   3/3        localhost:5000/raknatee/frontend:1.0.0
+7774gahqhky8   swarm-lab_mongo      replicated   1/1        mongo:3.6.22-xenial
+1e0fufzxkxo9   swarm-lab_registry   replicated   1/1        registry:2.8.0                           *:5000->5000/tcp
+bi3ue7hnih50   swarm-lab_traefik    replicated   1/1        traefik:v2.3                             *:80->80/tcp, *:443->443/tcp
+```
+
+<hr>
+
+```sh
+docker service ls
+```
+output
+```
+ID             NAME                 MODE         REPLICAS   IMAGE                                    PORTS
+r49y6f1d9xs6   swarm-lab_backend    replicated   3/3        localhost:5000/raknatee/backend:1.0.0
+uydnut9cr45m   swarm-lab_frontend   replicated   3/3        localhost:5000/raknatee/frontend:1.0.0
+7774gahqhky8   swarm-lab_mongo      replicated   1/1        mongo:3.6.22-xenial
+1e0fufzxkxo9   swarm-lab_registry   replicated   1/1        registry:2.8.0                           *:5000->5000/tcp
+bi3ue7hnih50   swarm-lab_traefik    replicated   1/1        traefik:v2.3                             *:80->80/tcp, *:443->443/tcp
+```
