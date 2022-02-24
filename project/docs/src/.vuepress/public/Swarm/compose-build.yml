@@ -1,0 +1,13 @@
+version: "3"
+services:      
+    frontend:
+        image: localhost:5000/raknatee/frontend:1.0.0
+        build:
+            context: ./frontend
+            dockerfile: prod.Dockerfile
+      
+    backend:
+        image: localhost:5000/raknatee/backend:1.0.0
+        build:
+            context: ./backend
+            dockerfile: prod.Dockerfile
