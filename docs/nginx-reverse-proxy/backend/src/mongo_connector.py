@@ -2,7 +2,6 @@ import pymongo #type:ignore
 from pymongo.mongo_client import MongoClient #type:ignore
 import os
 
-# password=os.environ['MONGO_INITDB_ROOT_PASSWORD']
 
 class Mongo:
     username="root"

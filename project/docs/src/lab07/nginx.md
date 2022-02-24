@@ -12,6 +12,7 @@
 +-- backend
 |    +-- src 
 |    |   +-- main.py
+|    |   +-- mongo_connector.py
 |    +-- dev.Dockerfile
 +-- frontend
 |    +-- src 
@@ -37,6 +38,10 @@
 ./backend/src/main.py
 
 <<< @/src/.vuepress/public/nginx-reverse-proxy/backend/src/main.py{8}
+
+./backend/src/mongo_connector.py
+
+<<< @/src/.vuepress/public/nginx-reverse-proxy/backend/src/mongo_connector.py
 
 ### Frontend
 
@@ -81,10 +86,11 @@ docker-compose down
 
 ## Start Coding (Production)
 
-```{5,11,16}
+```{6,12,17}
 +-- backend
 |    +-- src 
 |    |   +-- main.py
+|    |   +-- mongo_connector.py
 |    +-- dev.Dockerfile
 |    +-- prod.Dockerfile
 +-- frontend

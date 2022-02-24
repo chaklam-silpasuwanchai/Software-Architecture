@@ -23,14 +23,9 @@ For **Dynamic Configuration** we can add [labels](https://docs.docker.com/config
 ### project structure
 ```
 +-- backend
-|    +-- src 
-|    |   +-- main.py
-|    +-- Dockerfile.dev
+|    +-- ...
 +-- frontend
-|    +-- src 
-|    |   +-- app.js
-|    |   +-- index.html
-|    +-- Dockerfile 
+|    +-- ...
 +-- docker-compose.yml
 ```
 
