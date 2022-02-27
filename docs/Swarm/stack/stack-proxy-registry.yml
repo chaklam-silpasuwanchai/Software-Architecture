@@ -20,8 +20,6 @@ services:
             - TRAEFIK_PROVIDERS_DOCKER=true
             - TRAEFIK_PROVIDERS_DOCKER_SWARMMODE=true
            
-
-
             - TRAEFIK_ENTRYPOINTS_web=true
             - TRAEFIK_ENTRYPOINTS_web_ADDRESS=:80
 
@@ -29,9 +27,6 @@ services:
             - TRAEFIK_ENTRYPOINTS_websecure_ADDRESS=:443
 
            
-         
-
-
     registry:
         image: registry:2.8.0
 
