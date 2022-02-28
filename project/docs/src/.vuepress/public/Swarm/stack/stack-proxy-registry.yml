@@ -3,12 +3,10 @@ services:
 
     traefik:
         image: traefik:v2.3
-    
         ports:
             - "80:80"
             - "443:443"
           
-   
         volumes:
             - /var/run/docker.sock:/var/run/docker.sock
         deploy:
@@ -29,17 +27,16 @@ services:
            
     registry:
         image: registry:2.8.0
-
         ports:
           - "5000:5000"
 
+        volumes: 
+          - registry-volume:/var/lib/registry
         deploy:
             placement:
               constraints:
                 - "node.hostname==swarm-1"
        
-        volumes: 
-          - registry-volume:/var/lib/registry
 
 volumes:
   registry-volume:

@@ -6,13 +6,14 @@ from mongo_connector import Mongo
 app = FastAPI()
 
 base_url = "/api"
+api_version = "2"
     
 @app.get(base_url+"/")
 def read_root():
 
     data = Mongo.get_instance()['my-db']['my-collection'].find_one({"name":"counter"},{'_id':0})
 
-    return data
+    return {**data,**{"api_version":api_version}}
 
 @app.get(base_url+"/count")
 def add_count():

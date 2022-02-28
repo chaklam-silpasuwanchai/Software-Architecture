@@ -5,21 +5,17 @@ services:
         image: localhost:5000/raknatee/frontend:1.0.0
         deploy:
           replicas: 3
-          placement:
-              constraints:
-                - "node.hostname==swarm-1"
+
           labels:
               - "traefik.http.routers.front.rule=PathPrefix(`/`)"
               - "traefik.http.routers.front.entrypoints=web"
               - "traefik.http.services.front.loadbalancer.server.port=80"
 
     backend:
-        image: localhost:5000/raknatee/backend:1.0.0
+        image: localhost:5000/raknatee/backend:2.0.0
         deploy:  
           replicas: 3
-          placement:
-              constraints:
-                - "node.hostname==swarm-2"
+
           labels:
               - "traefik.http.routers.api.rule=PathPrefix(`/api`)" 
               - "traefik.http.routers.api.entrypoints=web"
