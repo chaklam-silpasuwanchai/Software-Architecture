@@ -2,6 +2,12 @@
 
 ## What is Orchestration?
 - To make it short, it means how we can manage our containers on multiple hosts.
+- (2022) There are two popular Orchestration software.
+    - [Kubernetes/Kube/K8s](https://kubernetes.io/)
+    - [Docker Swarm Mode](https://docs.docker.com/engine/swarm/)
+    - and more...
+        - [K3s](https://k3s.io/) (Lightweight Kubernetes)
+        - [openstack](https://www.openstack.org/) (supports VM cluster, Containe Orchestration or K8s)
 
 ### Main Feature Hightlights
 - Cluster management
@@ -13,12 +19,12 @@
 
 ## Understanding Workflow of Orchestration
 
-1. There is no build **Docker Image** concept in Orchestration
+1. There is no build **Docker Image** concept in Orchestration.
 2. Therefore, we need **Docker Registry** for storing the Images because all node in cluster needs to pull from Docker Registry.
     - There are many ways to store you Image(s).
         - [Docker Hub](https://hub.docker.com/)
         - [GitHub Container Registry](https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry)
-        - [Google Cloud Container Registry (GCR)](https://cloud.google.com/container-registry) (If you want to use K8s (Kubernetes) in GCP you might need this)
+        - [Google Cloud Container Registry (GCR)](https://cloud.google.com/container-registry) (If you want to use K8s (Kubernetes), you might need GCP)
         - [create your own local Registry](https://hub.docker.com/_/registry) We will use this for workshop.
         - and more ...
 3. Orchestration will do their jobs (pull, run container(s), manage).
@@ -26,7 +32,7 @@
 ## Docker tag and how to push them [link](https://docs.docker.com/engine/reference/commandline/tag/)
 
 ```
-{registry host}/{username}/{repositories of Image name}:{version}
+{registry host}/{username}/{repositories or Image name}:{version}
 ```
 
 ### Docker hub
@@ -54,7 +60,8 @@ docker push localhost:5000/raknatee/my-image:v1
 
 ### Node(s) [link](https://docs.docker.com/engine/swarm/key-concepts/#nodes)
 
-- There are two types of node in Swarm
+- Node is a computer machine or VM.
+- There are two types of node in Swarm.
     - Manager node(s): used for cluster management, we can have multi-manager nodes but only one will be **Leader of Manager node**.
     - Worker node(s): used for running container(s)
 
