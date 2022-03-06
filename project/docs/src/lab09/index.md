@@ -1,5 +1,11 @@
 # Lab 9: CI/CD with GitHub Actions
 
+[[toc]]
+
+----
+
+## Interlude
+
 Welcome back to this amazing series of "Becoming DevOps: Zero to Hero". Now that you have learnt so many tools for developing efficiently, we change our gear and ask how would we ensure the quality of our code?
 
 But... What is "quality of code" means?
@@ -51,7 +57,7 @@ A code that has a bug will not cause an issue until it is. If your code has `a =
 > - Each commit should trigger a build of the software.
 > - Each commit should trigger a series of automated tests that provide feedback in a few minutes.
 
-## Before we continue, what about CD
+## What about CD
 
 > [DevOps tech: Continuous delivery - cloud.google.com](https://cloud.google.com/architecture/devops/devops-tech-continuous-delivery)
 >
@@ -76,13 +82,15 @@ Continuous testing -> Continuous integration (CI) -> Continuous delivery (CD)
 
 <img src="https://cloud.google.com/architecture/images/ta-image1.png">
 
-Testing is an art of its own because testing can cover from Unit test to Userr Acceptance test (UAT) and system performace testing (Availability, Load/Stress). In this lab, to get a taste of CI/CD, we fous on Unit Tests. Many programming languages have at least one unit test library. 
+Testing is an art of its own because testing can cover from Unit test to User Acceptance test (UAT) and system performace testing (Availability, Load/Stress). In this lab, to get a taste of CI/CD, we fous on Unit Tests. Many programming languages have at least one unit test library. 
 
 ## Automation Tools
 
-In the developing process/life cycle, there are task that are consider to be routine work such as Testing and Deploying. For testing, once the test script is created, it is just a matter of executing it regularly and ,in context of CI, as much as possible (the sooner the bug is detected, the better). For deploying, we could stick to the old `copy` the code and `restart` the service. Surely, deploying the app, especially web app, is mostly the same process every build. In term of CD, we want the deployment to be a convinence process. Automating deployment is what we are after. 
+In the developing process/life cycle, there are task that are consider to be routine work such as Testing and Deploying. For testing, once the test script is created, it is just a matter of executing it regularly and, in context of CI, as much as possible (the sooner the bug is detected, the better). For deploying, we could stick to the old `copy` the code and `restart` the service. Surely, deploying the app, especially web app, is mostly the same process every build. In term of CD, we want the deployment to be a convinence process. Automating deployment is what we are after (simply, a script that once run, the project is deployed). 
+ 
+Automation tool is a tool that runs the script you create (test script and deploy script are the examples). Instead of a person runs scripts, a system runs them. What great is they help to keep record of every build. 
 
-There are many automation tools. Let's explore the two well-known tools. Jenkins and GitHub Actions.
+Let's explore the two well-known tools. Jenkins and GitHub Actions.
 ### Jenkins
 
 > [www.jenkins.io](https://www.jenkins.io/)
