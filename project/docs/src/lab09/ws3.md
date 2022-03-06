@@ -1,5 +1,9 @@
 # Workshop 3. Automate Deploy
 
+In this workshop, we will use a third-party `actions` script that can be found on [GitHub Marketplace](https://github.com/marketplace)
+
+
+
 <div class="page-nav"><p class="inner">
     <span class="prev"> 
         ←

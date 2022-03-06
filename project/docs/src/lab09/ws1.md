@@ -27,7 +27,7 @@ In short, Testing is cool and should be done.
 
 In my opinion, testing might not guarantee the success of the project (that is also depens on the business stuff) but it ensures the longevity of the project (given a good test script).  
 
-----
+One way to measure how good is your test script is using [Code Coverage](https://docs.djangoproject.com/en/4.0/internals/contributing/writing-code/unit-tests/#code-coverage)
 
 ## Task 1-1. Create a new Django Project
 
@@ -104,7 +104,7 @@ Current project tree
 
 5. Execute `python3 manage.py runserver 0.0.0.0:8000` to run the server and check that your project can run
 
-## Task 1-2. Create a new app
+## Task 1-2. Create a new app and test case
 
 1. Create an app `python3 manage.py startapp cicdapp`
 2. Edit 'cicdapp/tests.py' as following
@@ -170,6 +170,14 @@ Destroying test database for alias 'default'...
 ```
 
 4. Explain how the test script works.
+
+There are three sets of TestCase, `TestSet_A`, `TestSet_B`, and `TestSet_C`.
+
+- `TestSet_A`: This aims to show that only a method with `test*` will be exceuted.
+- `TestSet_B`: This shows that the order of execution is alphabetical order.
+- `TestSet_C`: This shows that the class is recreted for every test case.
+
+*Note: to run each `TestSet`, use `python3 manage.py test cicdapp.tests.<className>`*
 
 <div class="page-nav"><p class="inner">
     <span class="prev"> 
