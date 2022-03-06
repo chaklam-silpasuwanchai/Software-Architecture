@@ -16,7 +16,7 @@
 
 [Lab 8: Docker Swarm](./lab08/index.md)
 
-[Lab 9: Github Action with CI/CD]()
+[Lab 9: CI/CD with GitHub Action](./lab09/index.md)
 
 [Lab 10: WebSocket](./lab10/index.md)
 
